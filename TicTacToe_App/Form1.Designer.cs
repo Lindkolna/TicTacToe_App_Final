@@ -45,6 +45,13 @@
             this.C1 = new System.Windows.Forms.Button();
             this.C2 = new System.Windows.Forms.Button();
             this.C3 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.x_win_count = new System.Windows.Forms.Label();
+            this.o_win_count = new System.Windows.Forms.Label();
+            this.draw_count = new System.Windows.Forms.Label();
+            this.resetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -82,6 +89,7 @@
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newGameToolStripMenuItem,
+            this.resetToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
@@ -125,6 +133,8 @@
             this.A1.TabIndex = 3;
             this.A1.UseVisualStyleBackColor = true;
             this.A1.Click += new System.EventHandler(this.buttonClick);
+            this.A1.MouseEnter += new System.EventHandler(this.button_enter);
+            this.A1.MouseLeave += new System.EventHandler(this.button_leave);
             // 
             // A2
             // 
@@ -135,6 +145,8 @@
             this.A2.TabIndex = 4;
             this.A2.UseVisualStyleBackColor = true;
             this.A2.Click += new System.EventHandler(this.buttonClick);
+            this.A2.MouseEnter += new System.EventHandler(this.button_enter);
+            this.A2.MouseLeave += new System.EventHandler(this.button_leave);
             // 
             // A3
             // 
@@ -145,6 +157,8 @@
             this.A3.TabIndex = 5;
             this.A3.UseVisualStyleBackColor = true;
             this.A3.Click += new System.EventHandler(this.buttonClick);
+            this.A3.MouseEnter += new System.EventHandler(this.button_enter);
+            this.A3.MouseLeave += new System.EventHandler(this.button_leave);
             // 
             // B1
             // 
@@ -155,6 +169,8 @@
             this.B1.TabIndex = 6;
             this.B1.UseVisualStyleBackColor = true;
             this.B1.Click += new System.EventHandler(this.buttonClick);
+            this.B1.MouseEnter += new System.EventHandler(this.button_enter);
+            this.B1.MouseLeave += new System.EventHandler(this.button_leave);
             // 
             // B2
             // 
@@ -165,6 +181,8 @@
             this.B2.TabIndex = 7;
             this.B2.UseVisualStyleBackColor = true;
             this.B2.Click += new System.EventHandler(this.buttonClick);
+            this.B2.MouseEnter += new System.EventHandler(this.button_enter);
+            this.B2.MouseLeave += new System.EventHandler(this.button_leave);
             // 
             // B3
             // 
@@ -175,6 +193,8 @@
             this.B3.TabIndex = 8;
             this.B3.UseVisualStyleBackColor = true;
             this.B3.Click += new System.EventHandler(this.buttonClick);
+            this.B3.MouseEnter += new System.EventHandler(this.button_enter);
+            this.B3.MouseLeave += new System.EventHandler(this.button_leave);
             // 
             // C1
             // 
@@ -185,6 +205,8 @@
             this.C1.TabIndex = 9;
             this.C1.UseVisualStyleBackColor = true;
             this.C1.Click += new System.EventHandler(this.buttonClick);
+            this.C1.MouseEnter += new System.EventHandler(this.button_enter);
+            this.C1.MouseLeave += new System.EventHandler(this.button_leave);
             // 
             // C2
             // 
@@ -195,6 +217,8 @@
             this.C2.TabIndex = 10;
             this.C2.UseVisualStyleBackColor = true;
             this.C2.Click += new System.EventHandler(this.buttonClick);
+            this.C2.MouseEnter += new System.EventHandler(this.button_enter);
+            this.C2.MouseLeave += new System.EventHandler(this.button_leave);
             // 
             // C3
             // 
@@ -205,13 +229,87 @@
             this.C3.TabIndex = 11;
             this.C3.UseVisualStyleBackColor = true;
             this.C3.Click += new System.EventHandler(this.buttonClick);
+            this.C3.MouseEnter += new System.EventHandler(this.button_enter);
+            this.C3.MouseLeave += new System.EventHandler(this.button_leave);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(1, 286);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(81, 17);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "X win count";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(93, 286);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(79, 17);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "Draw count";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(185, 286);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(82, 17);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "O win count";
+            // 
+            // x_win_count
+            // 
+            this.x_win_count.AutoSize = true;
+            this.x_win_count.Location = new System.Drawing.Point(33, 303);
+            this.x_win_count.Name = "x_win_count";
+            this.x_win_count.Size = new System.Drawing.Size(17, 20);
+            this.x_win_count.TabIndex = 17;
+            this.x_win_count.Text = "0";
+            // 
+            // o_win_count
+            // 
+            this.o_win_count.AutoSize = true;
+            this.o_win_count.Location = new System.Drawing.Point(218, 303);
+            this.o_win_count.Name = "o_win_count";
+            this.o_win_count.Size = new System.Drawing.Size(17, 20);
+            this.o_win_count.TabIndex = 18;
+            this.o_win_count.Text = "0";
+            // 
+            // draw_count
+            // 
+            this.draw_count.AutoSize = true;
+            this.draw_count.Location = new System.Drawing.Point(123, 303);
+            this.draw_count.Name = "draw_count";
+            this.draw_count.Size = new System.Drawing.Size(17, 20);
+            this.draw_count.TabIndex = 19;
+            this.draw_count.Text = "0";
+            this.draw_count.Click += new System.EventHandler(this.label6_Click);
+            // 
+            // resetToolStripMenuItem
+            // 
+            this.resetToolStripMenuItem.Name = "resetToolStripMenuItem";
+            this.resetToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.resetToolStripMenuItem.Text = "Reset Counts";
+            this.resetToolStripMenuItem.Click += new System.EventHandler(this.resetToolStripMenuItem_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(282, 288);
+            this.ClientSize = new System.Drawing.Size(282, 343);
+            this.Controls.Add(this.draw_count);
+            this.Controls.Add(this.o_win_count);
+            this.Controls.Add(this.x_win_count);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.C3);
             this.Controls.Add(this.C2);
             this.Controls.Add(this.C1);
@@ -225,7 +323,7 @@
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.propertyGrid1);
             this.MainMenuStrip = this.menuStrip1;
-            this.MaximumSize = new System.Drawing.Size(300, 335);
+            this.MaximumSize = new System.Drawing.Size(300, 390);
             this.Name = "Form1";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -238,6 +336,16 @@
             this.ResumeLayout(false);
             this.PerformLayout();
 
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion
@@ -259,5 +367,12 @@
         private Button C1;
         private Button C2;
         private Button C3;
+        private Label label3;
+        private Label label1;
+        private Label label2;
+        private Label x_win_count;
+        private Label o_win_count;
+        private Label draw_count;
+        private ToolStripMenuItem resetToolStripMenuItem;
     }
 }

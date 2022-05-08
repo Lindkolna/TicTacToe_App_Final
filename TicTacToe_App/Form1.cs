@@ -2,7 +2,7 @@ namespace TicTacToe_App
 {
     public partial class Form1 : Form
     {
-        bool turn = true;
+        bool turn = true; //if true - 'X', if false - 'O'turn
         int turnCount = 0;
         public Form1()
         {
@@ -70,15 +70,24 @@ namespace TicTacToe_App
                 disableButtons();
                 string winner = "";
                 if (turn)
+                {
                     winner = "O";
+                    o_win_count.Text = (Int32.Parse(o_win_count.Text) + 1).ToString();
+                }
                 else
+                {
                     winner = "X";
+                    x_win_count.Text = (Int32.Parse(x_win_count.Text) + 1).ToString();
+                }
                 MessageBox.Show(winner + " is a winner!");
             }
             else
             {
                 if (turnCount == 9)
+                {
+                    draw_count.Text = (Int32.Parse(draw_count.Text) + 1).ToString();
                     MessageBox.Show("There are no winners. Play again!");
+                }
             }
         }
         public void disableButtons()
@@ -97,16 +106,44 @@ namespace TicTacToe_App
         {
             turn = true;
             turnCount = 0;
-            try
-            {
+            
                 foreach (Control c in Controls)
                 {
-                    Button b = (Button)c;
-                    b.Enabled = true;
-                    b.Text = "";
-                }
+                    try
+                    {
+                        Button b = (Button)c;
+                        b.Enabled = true;
+                        b.Text = "";
+                    }
+                catch { }
             }
-            catch { }
+        }
+
+        private void button_enter(object sender, EventArgs e)
+        {
+            Button b = (Button)sender;
+            if (b.Enabled)
+            {
+                if (turn)
+                    b.Text = "X";
+                else
+                    b.Text = "O";
+            }
+        }
+
+        private void button_leave(object sender, EventArgs e)
+        {
+            Button b = (Button)sender;
+            if (b.Enabled)
+            {
+                b.Text = "";
+            }
+        }
+        private void resetToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            x_win_count.Text = "0";
+            o_win_count.Text = "0";
+            draw_count.Text = "0";
         }
     }
 }
