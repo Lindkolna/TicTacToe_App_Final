@@ -24,7 +24,7 @@ namespace TicTacToe_App
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Tic Tac Toe or Xs and Os is a paper-and-pencil game for two players. The player who first marks three Xs or Os vertically, horizontally or diagonally is a winner.");
+            MessageBox.Show("Tic Tac Toe or Xs and Os is a paper-and-pencil game for two players. Each player must take turns to play and the player who first marks three Xs or Os vertically, horizontally or diagonally is a winner.");
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
